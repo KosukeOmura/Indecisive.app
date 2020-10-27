@@ -1,5 +1,27 @@
 <?php
 
+// エラー表示を有効にする
+ini_set( 'display_errors', 1 );
+
+// 全てのエラーを表示する
+ini_set('error_reporting', E_ALL);
+
+
+// DB接続情報
+define('DB_DATABASE','indecisive_app');
+define('DB_USERNAME','kosuke');
+define('DB_PASSWORD','komazawataxidesu');
+define('PDO_DSN','mysql:host=localhost;dbname=' . DB_DATABASE);
+
+// タイムゾーン設定
+date_default_timezone_set('Asia/Tokyo');
+
+//変数の初期化
+
+
+    // データベースに接続
+    $mysqli = new mysqli( DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
 
 
  ?>
@@ -21,24 +43,27 @@
         </div>
     </div>
 
-    <div class="input-area">
-        <input type="text" class="one" placeholder="選択①">
-        <input type="text" class="two" placeholder="選択②">
-        <div class="btn">Go!</div>
-    </div>
+    <form method="post">
+        <div class="input-area">
+            <input type="text" class="one" name="do1" placeholder="選択①">
+            <input type="text" class="two" name="do2" placeholder="選択②">
+            <input type="submit" name="btn_submit" value="GO!">
+        </div>
+    </form>
 
     <section>
-        <?php if(!empty($message_array)) { ?>
-
-        <?php foreach($message_array as $value) {?>
             <article>
                 <div class="info">
-                    <h2></h2>
+                <?php
+                    $r = rand(0,1);
+                    if ($r == 0) {
+                        echo 'do1';
+                    }else {
+                        echo 'do2';
+                    }
+                ?>
                 </div>
             </article>
-
-        <?php } ?>
-        <?php } ?>
     </section>
     
 </body>
