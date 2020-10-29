@@ -36,7 +36,7 @@ if( !empty($_POST['btn_submit']) ) {
     }
     // do2の入力チェック
     if( empty($_POST['do2'])) {
-        $error_message[] = '選択①を入力してください';
+        $error_message[] = '選択②を入力してください';
     }else {
         $clean['do2'] = htmlspecialchars( $_POST['do2'], ENT_QUOTES);
     
@@ -45,10 +45,10 @@ if( !empty($_POST['btn_submit']) ) {
     }
 
     try { 
-
-        // データベースに接続
-        $db = new PDO(PDO_DSN,DB_USERNAME,DB_PASSWORD);
-        $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        if( empty($error_message) ) {
+            // データベースに接続
+            $db = new PDO(PDO_DSN,DB_USERNAME,DB_PASSWORD);
+            $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     
                 // 書き込み日時を取得
                 $now_date = date("Y-m-d H:i:s");
@@ -60,6 +60,7 @@ if( !empty($_POST['btn_submit']) ) {
                 $stmt->execute();
     
                 $db = null;
+        }
     }catch(Exception $e) {
         echo 'ただいまメンテナンス中';
         exit();
@@ -70,7 +71,6 @@ if( !empty($_POST['btn_submit']) ) {
 
 
 try { 
-
     // データベースに接続
     $db = new PDO(PDO_DSN,DB_USERNAME,DB_PASSWORD);
     $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -79,22 +79,16 @@ try {
             $now_date = date("Y-m-d H:i:s");
             
             // DBからデータ出力
-            $sql = 'SELECT id,do1,do2,time FROM box WHERE 1';
+            $sql = 'SELECT id,do1,do2,time FROM box WHERE id = 1';
             
             $stmt = $db->prepare($sql);
             $stmt->execute();
-
-
     }catch(Exception $e) {
         echo 'ただいまメンテナンス中';
         exit();
-    }
-
-
-
+}
 
  ?>
-
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -104,6 +98,16 @@ try {
     <title>優柔不断選択アプリ</title>
 </head>
 <body>
+
+<!-- 未入力エラー表示処理 -->
+<?php if( !empty($error_message) ): ?>
+	<ul class="error_message">
+		<?php foreach( $error_message as $value ): ?>
+			<li>・<?php echo $value; ?></li>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
+
 
     <div class="container">
         <div class="indecisive-top">
@@ -127,17 +131,15 @@ try {
                 <?php
                     $do1 = $_POST['do1'];
                     $do2 = $_POST['do2'];
+                    
+                    $r = rand(0,1);
+                        if ($r == 0) {
+                            echo $do1;
+                        }else {
+                            echo $do2;
+                        }
                 ?>
                 
-                    <?php
-                                $r = rand(0,1);
-                                if ($r == 0) {
-                                    echo $do1;
-                                }else {
-                                    echo $do2;
-                                }
-
-                    ?>
                 </div>
             </article>
     </section>
