@@ -5,19 +5,23 @@ body {
 
 
 .top_container {
+    margin-top:100px;
     width:100vw;
     height:100vh;
-    display:table;
     .top_box {
-        margin-top:100px;
-        width:50%;
-        margin: 0 auto;
-        text-align:center;
-        display:table-cell;
-        vertical-align:middle;
-        h1 {
-            font-size:26px;
+        width: 50%;               /* 幅指定 */
+        height: 90px;               /* 高さ指定 */
+        margin:  0 auto;
+        img#hogehoge {
+            max-width:100%;
+            height:auto;
+            margin: 0 auto;
+        }            /* 中央寄せ */
+        .button_box {
+            text-align:center;
+            .b2 {
+                margin-left:100px;
+            }
         }
     }
-
 }

@@ -1,24 +1,35 @@
+@charset "UTF-8";
 body {
   width: 100%;
   max-width: 100vw;
 }
 
 .top_container {
+  margin-top: 100px;
   width: 100vw;
   height: 100vh;
-  display: table;
 }
 
 .top_container .top_box {
-  margin-top: 100px;
   width: 50%;
+  /* 幅指定 */
+  height: 90px;
+  /* 高さ指定 */
   margin: 0 auto;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
+  /* 中央寄せ */
 }
 
-.top_container .top_box h1 {
-  font-size: 26px;
+.top_container .top_box img#hogehoge {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.top_container .top_box .button_box {
+  text-align: center;
+}
+
+.top_container .top_box .button_box .b2 {
+  margin-left: 100px;
 }
 /*# sourceMappingURL=top.css.map */

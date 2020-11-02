@@ -1,0 +1,84 @@
+@charset "UTF-8";
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.top_back {
+  width: 100vw;
+  height: auto;
+  background-color: #000;
+}
+
+.top_back .top_back_container {
+  width: 50%;
+  /* 幅指定 */
+  height: auto;
+  /* 高さ指定 */
+  margin: 0 0 0 auto;
+}
+
+.top_back .top_back_container a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  margin-top: 100px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container .container_box {
+  width: 50%;
+  /* 幅指定 */
+  height: 90px;
+  /* 高さ指定 */
+  margin: 0 auto;
+}
+
+.container .container_box h3 {
+  text-align: center;
+}
+
+.container .container_box .image_juge {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.container .container_box .input-area {
+  text-align: center;
+}
+
+.container .container_box .input-area .do1 {
+  text-align: center;
+  padding: 50px;
+}
+
+.container .container_box .input-area .do2 {
+  text-align: center;
+  padding: 50px;
+}
+
+.container section {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.container section h2 {
+  border: 1px solid #000;
+  padding: 50px;
+  background-image: url(img/背景画像２.png);
+  animation: bgiLoop 5s linear infinite;
+}
+
+@keyframes bgiLoop {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 5000000000000px 300px;
+  }
+}
+/*# sourceMappingURL=index_php.css.map */
