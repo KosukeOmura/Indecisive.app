@@ -68,8 +68,6 @@ if( !empty($_POST['btn_submit']) ) {
         echo 'ただいまメンテナンス中';
         exit();
     }
-    header('Location:./');
-    exit;
     
 }
 
@@ -80,15 +78,15 @@ if( !empty($_POST['btn_submit']) ) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index_php.css">
-    <link rel="stylesheet" href="php_button.css">
+    <link rel="stylesheet" href="main_page/index_php.css">
+    <link rel="stylesheet" href="main_page/php_button.css">
     <title>優柔不断選択アプリ</title>
 </head>
 <body>
 
 <div class="top_back">
     <div class="top_back_container">
-        <a href="index.html">
+        <a href="./login/login.html">
             login
         </a>
     </div>
@@ -170,7 +168,7 @@ if( !empty($_POST['btn_submit']) ) {
     </div>
 
         <!-- GOボタン実装 -->
-        <script src="indexトップページ用/topback/fun_btn.js"></script>
+        <script src="main_page/fun_btn.js"></script>
     
 </body>
 </html>

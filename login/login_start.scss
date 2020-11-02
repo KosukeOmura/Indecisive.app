@@ -1,0 +1,179 @@
+body {
+    max-width:100%;
+    height:auto;
+    padding-right: 50px;
+    padding-left: 50px;
+    color: #222;
+	background: #f7f7f7;
+}
+
+p {
+    margin: 0;
+}
+/* タイトル */
+h1{
+    font-size:30px;
+}
+
+/* メイン全体の位置 */
+.login_start_box {
+    margin-top:10vh;
+    margin-left: 42%;
+}
+
+/* ログインネーム */
+.login_code {
+	padding: 10px;
+	font-size: 86%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+}
+
+/* ログインパスワード */
+.login_password{
+	padding: 10px;
+	font-size: 86%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+} 
+
+
+/* OK戻るボタン */
+.click_box {
+    margin-top:4vh;
+}
+
+input[type="submit"]{
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 86%;
+    line-height: 1.0em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #37a1e5;
+}
+
+input[type="button"]{
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 86%;
+    line-height: 1.0em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #37a1e5;
+}
+
+/* 初めての方はこちらリンク */
+a{
+    margin-top:1vh;
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+    text-decoration:none;
+    color:#000;
+
+    -webkit-animation:blink 1.0s ease-in-out infinite alternate;
+    -moz-animation:blink 1.0s ease-in-out infinite alternate;
+    animation:blink 1.0s ease-in-out infinite alternate;
+  }
+  
+  a::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #31aae2;
+    transition: .3s;
+    transform: translateX(-50%);
+  }
+  
+  a:hover::after{
+    width: 100%;
+  }
+
+  @-webkit-keyframes blink {
+    0% {opacity: 0.5; color:rgb(8, 60, 173);}
+    100% {opacity: 1;}
+}
+@-moz-keyframes blink {
+    0% {opacity: 0.5; color:rgb(16, 75, 204);}
+    100% {opacity: 1;}
+}
+@keyframes blink {
+    0% {opacity: 0.5; color:rgb(14, 73, 201);}
+    100% {opacity: 1;}
+}
+
+
+
+
+/* スマホ */
+
+@media (max-width: 580px) {
+    
+    /* タイトル */
+    h1{
+        font-size:26px;
+    }
+    /* メイン全体の位置 */
+    .login_start_box {
+        margin-left: 28%;
+    }
+
+    /* ログインネーム */
+    .login_code {
+        padding: 10px;
+        font-size: 83%;
+        margin-bottom:10px;
+    }
+
+    input[type="submit"]{
+        display:block;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 16px 72px;
+        color: #fff;
+        font-size: 86%;
+        line-height: 1.0em;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #37a1e5;
+    }
+    
+    input[type="button"]{
+        margin-top:3vh;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 16px 68px;
+        color: #fff;
+        font-size: 86%;
+        line-height: 1.0em;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #37a1e5;
+    }
+
+    /* OK戻るボタン */
+    .click_box {
+        margin-top:4vh;
+    }
+
+    /* 初めての方はこちらリンク */
+    a{
+        margin-top:3vh;
+        margin-left:2vw;
+    }
+
+}
