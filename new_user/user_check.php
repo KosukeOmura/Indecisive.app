@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 
     <!--登録部分CSS-->
-	<link rel="stylesheet" href="new_user_top.css">
+	<link rel="stylesheet" href="new_user.css">
 	<title>新規ユーザーチェック画面</title>
 </head>
 	<body>	

@@ -7,11 +7,11 @@ body {
 .top_back {
   width: 100vw;
   height: auto;
-  background-color: #000;
+  background-color: #ac7373;
 }
 
 .top_back .top_back_container {
-  width: 50%;
+  display: flex;
   /* 幅指定 */
   height: auto;
   /* 高さ指定 */
@@ -19,8 +19,51 @@ body {
 }
 
 .top_back .top_back_container a {
+  display: block;
+  text-align: right;
+  padding-right: 60px;
   text-decoration: none;
   color: #fff;
+  margin: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.top_back .top_back_container h1 {
+  text-align: right;
+  padding-right: 60px;
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.top_back .top_back_container .Time_line a {
+  padding-right: 100px;
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.top_back .top_back_container .profile_page a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.logout_contents {
+  font-size: 12px;
+  display: none;
+}
+
+.logout_contents.active {
+  display: block;
+  cursor: pointer;
 }
 
 .container {

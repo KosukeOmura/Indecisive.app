@@ -36,9 +36,11 @@
   
   .fun-btn {
     /* change bg color to get different hues    */
+    display: block;
+    margin: 0 auto;
     background-color: rgb(97, 14, 5);
     color: white;
-    padding: 2em 3em;
+    padding: 2em 18em;
     border: none;
     transition: all .3s ease;
     border-radius: 5px;

@@ -6,6 +6,9 @@
 // // 全てのエラーを表示する
 // ini_set('error_reporting', E_ALL);
 
+session_start();
+session_regenerate_id(true);
+
 
 // DB接続情報
 define('DB_DATABASE','indecisive_app');
@@ -57,7 +60,7 @@ if( !empty($_POST['btn_submit']) ) {
                 $now_date = date("Y-m-d H:i:s");
                 
                 // データを登録するSQL作成
-                $sql = "INSERT INTO box (do1, do2, time) VALUES ( '$clean[do1]', '$clean[do2]', '$now_date')";
+                $sql = "INSERT INTO box (user_id,do1, do2, time) VALUES ('$_SESSION[login_name]', '$clean[do1]', '$clean[do2]', '$now_date')";
                 
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
@@ -68,7 +71,6 @@ if( !empty($_POST['btn_submit']) ) {
         echo 'ただいまメンテナンス中';
         exit();
     }
-    
 }
 
  ?>
@@ -83,12 +85,28 @@ if( !empty($_POST['btn_submit']) ) {
     <title>優柔不断選択アプリ</title>
 </head>
 <body>
-
 <div class="top_back">
     <div class="top_back_container">
-        <a href="./login/login.html">
-            login
-        </a>
+        <div class="login_box">
+		    <div class="logout_switch">
+                    <?php
+                        if(isset($_SESSION['login'])==false) {
+                    ?>
+                <a href="login/login.php"><h1><?php	echo 'GESTさん';}
+                else {?></h1></a>
+                <h1><?php   echo $_SESSION['login_name']; 
+                            echo 'さんログイン中 <br />';
+                }?>
+                </h1><div class="logout_contents"><a href="logout_page/logout.php">ログアウト</a></div>
+            </div>
+	    </div>
+        <div class="Time_line">
+            <a href="TimeLine/time_line.php">タイムライン</a>
+        </div>
+        <div class="profile_page">
+            <a href="profile/profile.php">個人ページ</a>
+        </div>
+        
     </div>
 </div>
 
@@ -111,15 +129,14 @@ if( !empty($_POST['btn_submit']) ) {
 
             <form method="post">
                 <div class="input-area">
-                        <input type="text" class="do1 d_text" name="do1" placeholder="選択①" value="<?php if( !empty($_SESSION['do1']) ){ echo $_SESSION['do1']; } ?>">
-                        <input type="text" class="do2 d_text" name="do2" placeholder="選択②" value="<?php if( !empty($_SESSION['do2']) ){ echo $_SESSION['do2']; } ?>">
-                        <input type="submit" class="fun-btn" name="btn_submit" value="GO!">
+                        <textarea type="text" class="do1 d_text" name="do1"  value="<?php if( !empty($_SESSION['do1']) ){ echo $_SESSION['do1']; } ?>"></textarea>
+                        <textarea type="text" class="do2 d_text" name="do2"  value="<?php if( !empty($_SESSION['do2']) ){ echo $_SESSION['do2']; } ?>"></textarea>
+                        <input type="submit" class="fun-btn" id="this" name="btn_submit" value="GO!">
                 </div>
             </form>
             <section>
                     <article>
                         <div class="info">
-
                         <?php
                              // データベースに接続
                             $db = new PDO(PDO_DSN,DB_USERNAME,DB_PASSWORD);
@@ -135,14 +152,12 @@ if( !empty($_POST['btn_submit']) ) {
                                 $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                             
                                         // 書き込み日時を取得
-                                        $now_date = date("Y-m-d H:i:s");
-                                        
+                                        $now_date = date("Y-m-d H:i:s");                                        
                                         // DBからデータ出力
                                         $sql = 'SELECT id,do1,do2,time FROM box LIMIT 1';
                                         
                                         $stmt = $db->prepare($sql);
                                         $stmt->execute();
-
                                         while(true) {
                                             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
                                             if($rec == false) {
@@ -169,6 +184,12 @@ if( !empty($_POST['btn_submit']) ) {
 
         <!-- GOボタン実装 -->
         <script src="main_page/fun_btn.js"></script>
+
+        <!-- アコーディオン -->
+        <script src="main_page/accordion.js"></script>
+
+        <!-- ボタンを押せなくする -->
+        <script src="main_page/no_button.js"></script>
     
 </body>
 </html>

@@ -12,20 +12,6 @@
 
             <?php
 
-            // session_start();
-            // session_regenerate_id(true);
-            // if(isset($_SESSION['login'])==false) {
-            //     echo 'ログインできません';
-            //     echo '<a href="../login/staff_login.html">ログイン画面へ</a>';
-            //     exit();
-            // }else {
-
-            //     echo $_SESSION['staff_name'];
-            //     echo 'さんログイン中 <br />';
-            //     echo '<br />';
-            // }
-
-
             ini_set("display_errors", "On");
 
 
@@ -72,7 +58,7 @@
 
             ?>
 
-            <a href="../login/login.html"> ログインページ</a>
+            <a href="../login/login.php"> ログインページ</a>
 
         </div>
 	</body>

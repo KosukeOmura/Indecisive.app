@@ -1,0 +1,116 @@
+body {
+    width:100%;
+    margin:0;
+    background: rgb(219, 218, 218);
+}
+
+//ログイン部分
+.top_back {
+    width:100vw;
+    height:auto;
+    background-color:rgb(172, 115, 115);
+    .top_back_container {
+        display:flex;
+        width: 28%;               /* 幅指定 */
+        height: auto;               /* 高さ指定 */
+        margin:  0 0 0 auto;
+        a{
+            display:block;
+            text-align:right;
+            padding-right:60px;
+            text-decoration:none;
+            color:#fff;
+            margin:0;
+            font-size:16px;
+            cursor:pointer;
+        }
+        h1 {
+            text-align:right;
+            padding-right:60px;
+            text-decoration:none;
+            color:#fff;
+            margin:0;
+            font-size:16px;
+            cursor:pointer;
+
+        }
+        //一覧部分
+        .Time_line {
+            a {
+                padding-right:60px;
+                text-decoration:none;
+                color:#fff;
+                margin:0;
+                font-size:16px;
+                cursor:pointer;
+            }
+}
+    }
+}
+//ログアウト部分
+.logout_contents {
+    font-size: 12px;
+    display: none;
+  }
+  .logout_contents.active {
+    display: block;
+    cursor: pointer;
+  }
+
+
+
+//メイン部分
+article{
+    margin-top: 20px;
+	padding: 20px;
+	border-radius: 10px;
+    background: rgb(255, 255, 255);
+    width:80vw;
+    margin: 20px  auto 0 auto;
+}
+article.reply {
+    position: relative;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+article.reply::before {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    display: block;
+    content: "";
+    border-top: none;
+    border-left: 7px solid #f7f7f7;
+    border-right: 7px solid #f7f7f7;
+    border-bottom: 10px solid #fff;
+}
+
+.info {
+    margin-bottom: 10px;
+}
+.info h2 {
+    display: inline-block;
+    margin-right: 10px;
+    color: #222;
+    line-height: 1.6em;
+    font-size: 86%;
+}
+.info time {
+    color: #999;
+    line-height: 1.6em;
+    font-size: 72%;
+}
+.info p {
+    display: inline-block;
+    line-height: 1.6em;
+    font-size: 86%;
+}
+article p {
+    color: #555;
+    font-size: 86%;
+    line-height: 1.6em;
+}
+.firstt_bottom {
+    border-bottom:1px dashed rgb(120, 117, 117);
+}
+

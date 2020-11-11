@@ -2,21 +2,71 @@ body {
     width:100%;
     margin:0;
 }
+//ログイン部分
 .top_back {
     width:100vw;
     height:auto;
-    background-color:#000;
+    background-color:rgb(172, 115, 115);
     .top_back_container {
-        width: 50%;               /* 幅指定 */
+        display:flex;              /* 幅指定 */
         height: auto;               /* 高さ指定 */
         margin:  0 0 0 auto;
         a{
+            display:block;
+            text-align:right;
+            padding-right:60px;
             text-decoration:none;
             color:#fff;
+            margin:0;
+            font-size:16px;
+            cursor:pointer;
         }
+        h1 {
+            text-align:right;
+            padding-right:60px;
+            text-decoration:none;
+            color:#fff;
+            margin:0;
+            font-size:1rem;
+            cursor:pointer;
+
+        }
+          //タイムライン
+  .Time_line {
+      a {
+          padding-right:100px;
+          text-decoration:none;
+          color:#fff;
+          margin:0;
+          font-size:1rem;
+          cursor:pointer;
+      }
+  }
+            //個人ページ
+            .profile_page {
+                a {
+                    
+                    text-decoration:none;
+                    color:#fff;
+                    margin:0;
+                    font-size:1rem;
+                    cursor:pointer;
+                }
+            }
     }
 }
+//ログアウト部分
+.logout_contents {
+    font-size: 12px;
+    display: none;
+  }
+  .logout_contents.active {
+    display: block;
+    cursor: pointer;
+  }
 
+
+  //メイン部分
 .container {
     margin-top:100px;
     width:100vw;
@@ -51,6 +101,7 @@ body {
         }
     }
 
+    //投稿表示部分
     section {
         margin-top:100px;
         text-align:center;

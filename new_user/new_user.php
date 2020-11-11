@@ -15,7 +15,7 @@
 
     <h1>新規ユーザー登録画面</h1>
 
-    <form method="post" action="user_heck.php" enctype="multipart/form-data">
+    <form method="post" action="user_check.php" enctype="multipart/form-data">
 
     <p>お名前を入力してください。</p>
     <input type="text" name="name" class="name_touroku">
