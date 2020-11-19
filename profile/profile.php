@@ -88,6 +88,8 @@ $message_array = array();
     ?>
                 <section>
                     <!-- 取り出した件数をvalueに入れます。 -->
+                    <!-- これは措置であり適性ではない。この場合ユーザー名を被らないよう登録時処理をする必要がある。
+                SQL join句で可能?と思う -->
                     <?php foreach( $stmt as $value ){ ?>
                     
                     <?php if($value['user_id'] == $_SESSION['login_name']){ ?>
